@@ -1,3 +1,6 @@
+"""Take an integer as input and check whether it is prime or not. Display appropriate
+error message in case of invalid input."""
+
 x = int(input("Enter the number = "))
 
 i = 2
