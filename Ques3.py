@@ -1,19 +1,33 @@
-'''Take a list of integers as input and sort the elements of the list in-place, i.e., do not use any 
-other list for storing the result, only the values in the list are swapped to form the sorted list. 
-(Do not use the inbuilt sorting function). '''
+#n =input("Enter the number = ")
+n = None
+Odd={}
+Even = {}
 
+while True:
+    n = input("Enter the number (else 'over' to exit) : ")
+    if n == 'over':
+        break
+    n = int(n)
+    if n%2 == 0:
+        Even[n] = [n**2, n**3]
+    else:
+        Odd[n] = [n**2, n**3]
 
-list_1 = list(map(int, input().split()))
-
-j=0
-for j in range(len(list_1)):
-    i=0
-    while i<(len(list_1)-1-j):
-        if list_1[i]>list_1[i+1]:
-            temp = list_1[i]
-            list_1[i] = list_1[i+1]
-            list_1[i+1] = temp
-        i+=1
-    j+=1
-    print(list_1)
-    
+#while str(n).lower()=="over":
+#    print("You are out")
+#    break
+#else:
+#    if int(n)%2==0:
+#        Even[int(n)] = [int(n)**2, int(n)**3]
+#    elif int(n)%2==1:
+#        Odd[int(n)] = [int(n)**2, int(n)**3]
+#    inp = int(input("Enter the number = "))
+#    while str(inp).lower()=="over":
+#        print("You are out")
+#    else:    
+#        if inp%2==0:
+#            Even[inp] = [inp**2,inp**3]
+#        else:
+#            Odd[inp] = [inp**2, inp**3]
+print(Odd)
+print(Even)
