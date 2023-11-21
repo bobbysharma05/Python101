@@ -1,30 +1,54 @@
-import random 
-frequency1 = 0
-frequency2 = 0
-frequency3 = 0
-frequency4 = 0
-frequency5 = 0
-frequency6 = 0
+list1 = list(map(int, input().split()))
+list2 = list(map(int, input().split()))
 
-for i in range(6_00_000):
-    die = random.randrange(1,7)
+# #part1
+set1 = set(list1)
+set2 = set(list2)
 
-    if die == 1:
-        frequency1+=1
-    elif die == 2:
-        frequency2+=1
-    elif die == 3:
-        frequency3+=1
-    elif die == 4:
-        frequency4+=1
-    elif die == 5:
-        frequency5+=1
-    else:
-        frequency6+=1
+#part2
+a = set1 | set2
+b = set1 & set2 
+c = set1 - set2
+d = set1 ^ set2
+print(a)
+print(b) 
+print(c)
+print(d)
 
-print("Frequency 1 = ",frequency1)
-print("Frequency 2 = ",frequency2)
-print("Frequency 3 = ",frequency3)
-print("Frequency 4 = ",frequency4)
-print("Frequency 5 = ",frequency5)
-print("Frequency 6 = ",frequency6)
+#part3
+new_list1 = []
+for i in list1:
+    if i not in new_list1:
+        new_list1.append(i)
+
+new_list2 = []
+for i in list2:
+    if i not in new_list2:
+        new_list2.append(i)
+
+print(new_list1)
+print(new_list2)
+
+intersection_list = []
+for i in new_list1:
+    if i in new_list2:
+        intersection_list.append(i)
+
+print(set(intersection_list))
+
+#part4
+n_list1 = []
+for i in list1:
+    if i not in n_list1:
+        n_list1.append(i)
+
+n_list2 = []
+for i in list2:
+    if i not in n_list2:
+        n_list2.append(i)
+
+print(n_list1)
+print(n_list2)
+
+union_list = list1+list2
+print(set(union_list))
